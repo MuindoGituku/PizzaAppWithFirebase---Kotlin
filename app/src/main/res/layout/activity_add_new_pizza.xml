@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewPizzaActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="237dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/dominos_large" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginTop="50sp"
+            android:layout_marginBottom="15sp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Fill in the details below to upload a new pizza record into the application database. Fields marked with (*) are mandatory."
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginBottom="5sp"
+            android:text="Pizza Name *"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/pizzaNameAddEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginEnd="16sp"
+            android:ems="10"
+            android:hint="e.g. Hawaiian Pizza"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginBottom="5sp"
+            android:text="Category *"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/pizzaCategoryAddEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginBottom="5sp"
+            android:ems="10"
+            android:hint="e.g. Deluxe Chicken Toppings"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginBottom="5sp"
+            android:text="Price *"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/pizzaPriceAddEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginBottom="5sp"
+            android:ems="10"
+            android:hint="e.g. $ 25.98"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/addPizzaUploadButton"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginEnd="16sp"
+            android:text="Add New Pizza" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

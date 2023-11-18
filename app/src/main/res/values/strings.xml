@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pizza App With Firebase</string>
+    <string name="welcome_text_1">Welcome</string>
+    <string name="welcome_text_2">Domino\'s Pizza</string>
+    <string name="welcome_text_3">Now you never have to get off your feet in order to have a meal, dominate with a single tap.</string>
+    <string name="welcome_text_4">Terms and Conditions Apply | Copyright ©️ 2023 Group 1. All Rights Reserved</string>
+    <string name="title_activity_admin_tabbed_dashboard">AdminTabbedDashboard</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+</resources>

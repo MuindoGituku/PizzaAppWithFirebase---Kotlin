@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "271947844219",
+    "project_id": "pizza-order-app---kotlin",
+    "storage_bucket": "pizza-order-app---kotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271947844219:android:62dc0065a3387cd080f0de",
+        "android_client_info": {
+          "package_name": "com.example.pizzaappwithfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVLPVujTkS4XirbcvtQbuRInk48ZNJy28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

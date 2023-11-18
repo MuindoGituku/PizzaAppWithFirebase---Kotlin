@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PizzaAppWithFirebase" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.PizzaAppWithFirebase" parent="Base.Theme.PizzaAppWithFirebase" />
+    <style name="Theme.PizzaAppWithFirebase.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.PizzaAppWithFirebase.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.PizzaAppWithFirebase.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
