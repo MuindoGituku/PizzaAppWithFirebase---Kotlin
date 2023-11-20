@@ -56,10 +56,10 @@ class AdminDashboardActivity : AppCompatActivity() {
         }
 
         // List orders
-        customOrderAdapter = CustomOrderAdapter(emptyList()) { pizzaId ->
+        customOrderAdapter = CustomOrderAdapter(emptyList()) { orderId ->
             // Handle item click, e.g., start a new activity with the selected pizza ID
-            val intent = Intent(this, PizzaOrderActivity::class.java)
-            intent.putExtra("selected_pizza_id", pizzaId)
+            val intent = Intent(this, OrderDeliverActivity::class.java)
+            intent.putExtra("selected_order_id", orderId)
             startActivity(intent)
         }
         binding.pizzasListRecycleView.layoutManager = LinearLayoutManager(this)

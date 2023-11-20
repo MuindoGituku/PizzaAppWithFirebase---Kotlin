@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PizzaAppWithFirebase"
         tools:targetApi="31">
         <activity
+            android:name=".OrderDeliverActivity"
+            android:exported="false" />
+        <activity
             android:name=".PizzaOrderActivity"
             android:exported="false" />
         <activity
