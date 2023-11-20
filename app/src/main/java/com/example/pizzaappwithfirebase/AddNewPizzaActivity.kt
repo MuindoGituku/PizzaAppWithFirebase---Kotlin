@@ -33,6 +33,7 @@ class AddNewPizzaActivity : AppCompatActivity() {
                     binding.pizzaCategoryAddEdit.text.clear()
 
                     Toast.makeText(this, "Pizza Added successfully", Toast.LENGTH_SHORT).show()
+                    finish()
 
 
                 }.addOnFailureListener {
