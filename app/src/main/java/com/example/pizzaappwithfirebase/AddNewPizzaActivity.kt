@@ -42,8 +42,6 @@ class AddNewPizzaActivity : AppCompatActivity() {
 
                     Toast.makeText(this, "Pizza Added successfully", Toast.LENGTH_SHORT).show()
                     finish()
-
-
                 }.addOnFailureListener {
                     Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
                 }

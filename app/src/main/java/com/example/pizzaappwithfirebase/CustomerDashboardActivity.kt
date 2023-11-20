@@ -6,7 +6,6 @@
  * @description: Android Assignment 4
  */
 
-
 package com.example.pizzaappwithfirebase
 
 import CustomPizzasAdapter
@@ -65,7 +64,6 @@ class CustomerDashboardActivity : AppCompatActivity() {
 
         val pizzasQuerySnaphot = firebaseFirestore.collection("pizzas").get()
 
-
         pizzasQuerySnaphot.addOnSuccessListener {
             if (it.isEmpty){
 
@@ -84,7 +82,6 @@ class CustomerDashboardActivity : AppCompatActivity() {
         }.addOnFailureListener {
             Log.d("Fetching Pizzas", "Fetching a list of pizzas failed with exception, $it")
         }
-
 
         binding.customerDashLogoutButton.setOnClickListener {
             firebaseAuth.signOut()

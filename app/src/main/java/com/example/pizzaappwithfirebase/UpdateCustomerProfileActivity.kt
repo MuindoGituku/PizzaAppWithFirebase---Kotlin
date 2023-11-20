@@ -65,7 +65,6 @@ class UpdateCustomerProfileActivity : AppCompatActivity() {
                 }.addOnFailureListener {
                     Log.d("Customer Profile Update","Failed to update the customer profile $it")
                 }
-
             }
             else{
                 if (newFirstName.isEmpty()){

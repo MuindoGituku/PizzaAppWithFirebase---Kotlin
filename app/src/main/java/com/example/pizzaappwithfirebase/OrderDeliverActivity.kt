@@ -15,8 +15,6 @@ import com.example.pizzaappwithfirebase.databinding.ActivityOrderDeliverBinding
 import com.example.pizzaappwithfirebase.models.OrderModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import java.text.SimpleDateFormat
-import java.util.Date
 
 class OrderDeliverActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOrderDeliverBinding
@@ -40,8 +38,6 @@ class OrderDeliverActivity : AppCompatActivity() {
         selectedOrderID = intent.getStringExtra("selected_order_id").toString()
 
         val orderDocumentReference = firebaseFirestore.collection("orders").document(selectedOrderID)
-
-        val simpleDateFormat = SimpleDateFormat("YYYY/MM/DD hh:mm:ss")
 
         orderDocumentReference.get().addOnSuccessListener {
             if (it.exists()){

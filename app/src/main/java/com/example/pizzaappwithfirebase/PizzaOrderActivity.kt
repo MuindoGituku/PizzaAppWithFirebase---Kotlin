@@ -67,8 +67,6 @@ class PizzaOrderActivity : AppCompatActivity() {
             }
         }
 
-
-
         binding.placeOrderButton.setOnClickListener {
             val customerID = firebaseAuth.currentUser!!.uid
             val productID = selectedPizzaID
