@@ -70,13 +70,11 @@ class CustomerDashboardActivity : AppCompatActivity() {
             }
             else{
                 val uploadedPizzas = mutableListOf<PizzaModel>()
-
                 for (pizzaDoc in it){
                     val pizzaObject = pizzaDoc.toObject<PizzaModel>()
                     pizzaObject.id = pizzaDoc.id
                     uploadedPizzas.add(pizzaObject)
                 }
-
                 customPizzasAdapter.updateData(uploadedPizzas)
             }
         }.addOnFailureListener {
@@ -89,9 +87,9 @@ class CustomerDashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // Logout button
         binding.customerDashLogoutButton.setOnClickListener {
             firebaseAuth.signOut()
-
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

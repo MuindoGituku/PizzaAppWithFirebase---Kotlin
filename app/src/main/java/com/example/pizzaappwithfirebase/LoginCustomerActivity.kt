@@ -26,6 +26,7 @@ class LoginCustomerActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        // Login button
         binding.customerLoginButton.setOnClickListener {
             val customerEmail = binding.customerEmailLogEdit.text.trim().toString()
             val customerPassword = binding.customerPassLogEdit.text.trim().toString()
@@ -54,6 +55,7 @@ class LoginCustomerActivity : AppCompatActivity() {
             }
         }
 
+        // Register customer button
         binding.customerRegisterRedirectButton.setOnClickListener {
             val intent = Intent(this, RegisterCustomerActivity::class.java)
             startActivity(intent)

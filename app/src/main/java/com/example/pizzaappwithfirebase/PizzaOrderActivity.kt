@@ -55,11 +55,13 @@ class PizzaOrderActivity : AppCompatActivity() {
             Log.d("Pizza in View", "Fetching the pizza info failed with exception, $it")
         }
 
+        // Increase button
         binding.increaseOrderButton.setOnClickListener {
             itemCount++
             updateTotalOrder()
         }
 
+        // Decrease button
         binding.decreaseOrderButton.setOnClickListener {
             if (itemCount > 1) {
                 itemCount--
@@ -67,6 +69,7 @@ class PizzaOrderActivity : AppCompatActivity() {
             }
         }
 
+        // Place order button
         binding.placeOrderButton.setOnClickListener {
             val customerID = firebaseAuth.currentUser!!.uid
             val productID = selectedPizzaID
@@ -86,6 +89,7 @@ class PizzaOrderActivity : AppCompatActivity() {
         }
     }
 
+    // Update order amount
     private fun updateTotalOrder() {
         val totalOrder = itemCount * binding.pizzaPriceText.text.toString().toDouble()
         binding.pizzaChargeText.text = totalOrder.toString()

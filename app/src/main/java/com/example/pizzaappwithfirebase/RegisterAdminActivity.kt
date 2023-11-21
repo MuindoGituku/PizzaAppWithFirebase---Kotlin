@@ -85,6 +85,7 @@ class RegisterAdminActivity : AppCompatActivity() {
             }
         }
 
+        // Go to login page button
         binding.adminLoginRedirectButton.setOnClickListener {
             val intent = Intent(this, LoginAdminActivity::class.java)
             startActivity(intent)

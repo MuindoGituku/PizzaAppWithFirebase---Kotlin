@@ -49,6 +49,7 @@ class UpdateCustomerProfileActivity : AppCompatActivity() {
             Log.d("Current Admin", "Fetching an admin profile failed with exception, $it")
         }
 
+        // Update button
         binding.customerUpdateButton.setOnClickListener {
             val newFirstName = binding.customerFirstNameUpdEdit.text.trim().toString()
             val newLastName = binding.customerLastNameUpdEdit.text.trim().toString()

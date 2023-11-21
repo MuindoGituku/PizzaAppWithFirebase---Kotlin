@@ -27,6 +27,7 @@ class LoginAdminActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        // Login button
         binding.adminLoginButton.setOnClickListener {
             val adminEmail = binding.adminEmailLogEdit.text.trim().toString()
             val adminPassword = binding.adminPassLogEdit.text.trim().toString()
@@ -55,6 +56,7 @@ class LoginAdminActivity : AppCompatActivity() {
             }
         }
 
+        // Register button
         binding.adminRegisterRedirectButton.setOnClickListener {
             val intent = Intent(this, RegisterAdminActivity::class.java)
             startActivity(intent)

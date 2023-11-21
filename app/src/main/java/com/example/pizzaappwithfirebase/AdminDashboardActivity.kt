@@ -57,7 +57,6 @@ class AdminDashboardActivity : AppCompatActivity() {
 
         // List orders
         customOrderAdapter = CustomOrderAdapter(emptyList()) { orderId ->
-            // Handle item click, e.g., start a new activity with the selected pizza ID
             val intent = Intent(this, OrderDeliverActivity::class.java)
             intent.putExtra("selected_order_id", orderId)
             startActivity(intent)
@@ -71,13 +70,11 @@ class AdminDashboardActivity : AppCompatActivity() {
             }
             else{
                 val allOrders = mutableListOf<OrderModel>()
-
                 for (order in it){
                     val orderObject = order.toObject<OrderModel>()
                     orderObject.id = order.id
                     allOrders.add(orderObject)
                 }
-
                 customOrderAdapter.updateData(allOrders)
             }
         }.addOnFailureListener {
@@ -87,7 +84,6 @@ class AdminDashboardActivity : AppCompatActivity() {
         // Logout button
         binding.adminDashLogoutButton.setOnClickListener {
             firebaseAuth.signOut()
-
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -98,7 +94,7 @@ class AdminDashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Upload new pizza type button
+        // Upload a new pizza type button
         binding.uploadNewPizzaFAB.setOnClickListener {
             val intent = Intent(this, AddNewPizzaActivity::class.java)
             startActivity(intent)

@@ -52,6 +52,7 @@ class OrderDeliverActivity : AppCompatActivity() {
             Log.d("Order in View", "Fetching the order info failed with exception, $it")
         }
 
+        // Deliver button
         binding.deliverOrderButton.setOnClickListener {
             orderDocumentReference.update(mapOf("status" to "Delivery"))
                 .addOnSuccessListener {

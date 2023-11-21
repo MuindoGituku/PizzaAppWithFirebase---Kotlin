@@ -26,11 +26,13 @@ class MainActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        // Login customer button
         binding.loginCustomerDashButton.setOnClickListener {
             val intent = Intent(this, LoginCustomerActivity::class.java)
             startActivity(intent)
         }
 
+        // Login admin button
         binding.loginAdminDashButton.setOnClickListener {
             val intent = Intent(this, LoginAdminActivity::class.java)
             startActivity(intent)

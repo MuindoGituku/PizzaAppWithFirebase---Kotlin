@@ -97,6 +97,7 @@ class RegisterCustomerActivity : AppCompatActivity() {
             }
         }
 
+        // Go to login page button
         binding.customerLoginRedirectButton.setOnClickListener {
             val intent = Intent(this, LoginCustomerActivity::class.java)
             startActivity(intent)
