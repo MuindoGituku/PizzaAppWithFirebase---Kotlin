@@ -18,13 +18,13 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="413dp"
+            android:layout_height="450dp"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/dominos_large" />
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="26dp"
             android:layout_marginStart="16sp"
             android:layout_marginTop="10sp"
             android:layout_marginEnd="16sp"
@@ -34,16 +34,6 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16sp"
-            android:layout_marginEnd="16sp"
-            android:layout_marginBottom="15sp"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/welcome_text_3"
-            android:textAlignment="center" />
 
         <Button
             android:id="@+id/loginCustomerDashButton"

@@ -30,16 +30,6 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:layout_marginEnd="16sp"
-        android:layout_marginBottom="15sp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="You can now make changes to some of the details in your administrator profile. Fields marked with (*) are mandatory."
-        android:textSize="12sp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,7 +48,7 @@
             android:layout_marginTop="5sp"
             android:layout_marginEnd="16sp"
             android:layout_marginBottom="5sp"
-            android:text="First Name *"
+            android:text="First Name*"
             android:textSize="12sp"
             android:textStyle="bold" />
 
@@ -89,7 +79,7 @@
             android:layout_marginTop="5sp"
             android:layout_marginEnd="16sp"
             android:layout_marginBottom="5sp"
-            android:text="Last Name *"
+            android:text="Last Name*"
             android:textSize="12sp"
             android:textStyle="bold" />
 

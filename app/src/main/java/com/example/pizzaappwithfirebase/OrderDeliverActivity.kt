@@ -8,9 +8,11 @@
 
 package com.example.pizzaappwithfirebase
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.pizzaappwithfirebase.databinding.ActivityOrderDeliverBinding
 import com.example.pizzaappwithfirebase.models.OrderModel
 import com.google.firebase.auth.FirebaseAuth
@@ -21,8 +23,6 @@ class OrderDeliverActivity : AppCompatActivity() {
     private lateinit var firebaseFirestore: FirebaseFirestore
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var selectedOrderID: String
-    private lateinit var newOrderModel: OrderModel
-    private var itemCount = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,10 +46,21 @@ class OrderDeliverActivity : AppCompatActivity() {
                 binding.orderPriceText.text = it.data!!["orderPrice"].toString()
             }
             else{
-                Log.d("ORder in View", "No such order entry found")
+                Log.d("Order in View", "No such order entry found")
             }
         }.addOnFailureListener {
-            Log.d("Pizza in View", "Fetching the order info failed with exception, $it")
+            Log.d("Order in View", "Fetching the order info failed with exception, $it")
+        }
+
+        binding.deliverOrderButton.setOnClickListener {
+            orderDocumentReference.update(mapOf("status" to "Delivery"))
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Order status updated successfully", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, AdminDashboardActivity::class.java)
+                    startActivity(intent)
+                }.addOnFailureListener {
+                    Log.d("Order Status Update","Failed to update the order status $it")
+                }
         }
     }
 }
