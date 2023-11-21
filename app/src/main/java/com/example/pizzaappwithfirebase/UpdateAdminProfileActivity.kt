@@ -8,6 +8,7 @@
 
 package com.example.pizzaappwithfirebase
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -55,7 +56,8 @@ class UpdateAdminProfileActivity : AppCompatActivity() {
                 adminDocumentReference.update(updatedAdminModel)
                     .addOnSuccessListener {
                     Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
-                    finish()
+                        val intent = Intent(this, AdminDashboardActivity::class.java)
+                        startActivity(intent)
                 }.addOnFailureListener {
                     Log.d("Admin Profile Update","Failed to update the admin profile $it")
                 }

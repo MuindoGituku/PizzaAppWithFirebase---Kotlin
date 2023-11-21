@@ -8,6 +8,7 @@
 
 package com.example.pizzaappwithfirebase
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -61,7 +62,8 @@ class UpdateCustomerProfileActivity : AppCompatActivity() {
 
                 customerDocumentReference.update(updatedCustomerModel).addOnSuccessListener {
                     Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
-                    finish()
+                    val intent = Intent(this, CustomerDashboardActivity::class.java)
+                    startActivity(intent)
                 }.addOnFailureListener {
                     Log.d("Customer Profile Update","Failed to update the customer profile $it")
                 }

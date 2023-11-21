@@ -83,6 +83,12 @@ class CustomerDashboardActivity : AppCompatActivity() {
             Log.d("Fetching Pizzas", "Fetching a list of pizzas failed with exception, $it")
         }
 
+        // Update profile button
+        binding.updateCustomerProfileButton.setOnClickListener {
+            val intent = Intent(this, UpdateCustomerProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.customerDashLogoutButton.setOnClickListener {
             firebaseAuth.signOut()
 
