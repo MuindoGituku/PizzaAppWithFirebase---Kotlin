@@ -1,3 +1,11 @@
+/**
+ * @Group 1
+ * @author Muindo Gituku (301372521)
+ * @author Emre Deniz (301371047)
+ * @date Nov 24, 2023
+ * @description: Android Assignment 4
+ */
+
 package com.example.pizzaappwithfirebase
 
 import CustomOrderAdapter
