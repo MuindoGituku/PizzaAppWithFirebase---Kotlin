@@ -87,6 +87,11 @@ class CustomerDashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.viewMyOrdersFAB.setOnClickListener{
+            val intent = Intent(this, CustomerOrdersActivity::class.java)
+            startActivity(intent)
+        }
+
         // Logout button
         binding.customerDashLogoutButton.setOnClickListener {
             firebaseAuth.signOut()

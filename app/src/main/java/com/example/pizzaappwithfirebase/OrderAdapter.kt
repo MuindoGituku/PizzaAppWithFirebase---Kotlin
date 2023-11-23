@@ -10,9 +10,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pizzaappwithfirebase.R
+import com.example.pizzaappwithfirebase.models.CustomerModel
 import com.example.pizzaappwithfirebase.models.OrderModel
+import com.example.pizzaappwithfirebase.models.PizzaModel
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.toObject
+import java.security.AccessController.getContext
 import java.text.SimpleDateFormat
 
 class CustomOrderAdapter(private var ordersList: List<OrderModel>, private val onItemClick: (String) -> Unit) : RecyclerView.Adapter<CustomOrderAdapter.OrderViewHolder>() {
@@ -40,18 +47,39 @@ class CustomOrderAdapter(private var ordersList: List<OrderModel>, private val o
     }
 
     class OrderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val orderIdTextView: TextView = itemView.findViewById(R.id.orderId)
-        private val orderStatusTextView: TextView = itemView.findViewById(R.id.orderStatus)
-        private val orderDateTextView: TextView = itemView.findViewById(R.id.orderDate)
-        private val orderPriceTextView: TextView = itemView.findViewById(R.id.orderPrice)
+        private val pizzaOrderedName = itemView.findViewById<TextView>(R.id.pizzaOrderedNameText)
+        private val orderCustomerFullName = itemView.findViewById<TextView>(R.id.orderCustomerFullNameText)
+        private val orderDateTextView = itemView.findViewById<TextView>(R.id.orderDate)
+        private val orderPriceTextView = itemView.findViewById<TextView>(R.id.orderPrice)
+        private val orderStatus = itemView.findViewById<TextView>(R.id.orderStatusText)
 
         val simpleDateFormat = SimpleDateFormat("YYYY/MM/DD hh:mm:ss")
 
         fun bind(order: OrderModel) {
-            orderIdTextView.text = order.id
-            orderStatusTextView.text = order.status
+            val firebaseFirestore = FirebaseFirestore.getInstance()
+
+            firebaseFirestore.collection("pizzas").document(order.productID).get().addOnSuccessListener {
+                if (it.exists()){
+                    val pizzaObject = it.toObject<PizzaModel>()
+                    pizzaOrderedName.text = pizzaObject!!.pizzaName
+                }
+                else{
+                    pizzaOrderedName.text = "Pizza Not Found"
+                }
+            }
+
+            firebaseFirestore.collection("customers").document(order.customerID).get().addOnSuccessListener {
+                if (it.exists()){
+                    val customerObject = it.toObject<CustomerModel>()
+                    orderCustomerFullName.text = "${customerObject!!.firstname} ${customerObject!!.lastname}"
+                }
+                else{
+                    orderCustomerFullName.text = "Customer Not Found"
+                }
+            }
             orderDateTextView.text = simpleDateFormat.format(order.orderDate.seconds * 1000L).toString()
             orderPriceTextView.text = "$ ${order.orderPrice}"
+            orderStatus.text = order.status
         }
     }
 }

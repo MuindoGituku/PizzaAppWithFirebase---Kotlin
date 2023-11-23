@@ -15,6 +15,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pizzaappwithfirebase.databinding.ActivityAdminDashboardBinding
+import com.example.pizzaappwithfirebase.models.CustomerModel
 import com.example.pizzaappwithfirebase.models.OrderModel
 import com.example.pizzaappwithfirebase.models.PizzaModel
 import com.google.firebase.auth.FirebaseAuth
@@ -85,6 +86,11 @@ class AdminDashboardActivity : AppCompatActivity() {
         binding.adminDashLogoutButton.setOnClickListener {
             firebaseAuth.signOut()
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.pizzasListFAB.setOnClickListener{
+            val intent = Intent(this, AllPizzasListActivity::class.java)
             startActivity(intent)
         }
 

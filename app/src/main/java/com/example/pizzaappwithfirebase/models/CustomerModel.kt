@@ -8,4 +8,8 @@ class CustomerModel (
     val homeAddress: String,
     val city: String,
     val postalCode: String,
-)
+){
+    val id:String = ""
+
+    constructor():this("","","","","","","")
+}

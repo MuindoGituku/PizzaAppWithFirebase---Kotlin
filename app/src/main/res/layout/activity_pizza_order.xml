@@ -22,6 +22,19 @@
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/logo" />
 
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="10sp"
+            android:fontFamily="sans-serif-black"
+            android:text="Place an Order"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
