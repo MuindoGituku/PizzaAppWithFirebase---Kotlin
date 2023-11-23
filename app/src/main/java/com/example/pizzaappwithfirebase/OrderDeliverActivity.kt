@@ -99,14 +99,13 @@ class OrderDeliverActivity : AppCompatActivity() {
             Log.d("Order in View", "Fetching the order info failed with exception, $it")
         }
 
-
-
         // Deliver button
         binding.deliverOrderButton.setOnClickListener {
             firebaseFirestore.collection("orders").document(selectedOrderID).update(mapOf("status" to "Delivery"))
                 .addOnSuccessListener {
                     Toast.makeText(this, "Order status updated successfully", Toast.LENGTH_SHORT).show()
-                    finish()
+                    val intent = Intent(this, AdminDashboardActivity::class.java)
+                    startActivity(intent)
                 }.addOnFailureListener {
                     Log.d("Order Status Update","Failed to update the order status $it")
                 }

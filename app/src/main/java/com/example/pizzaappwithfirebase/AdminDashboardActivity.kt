@@ -89,6 +89,7 @@ class AdminDashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // Open all pizzas list and add new pizza type
         binding.pizzasListFAB.setOnClickListener{
             val intent = Intent(this, AllPizzasListActivity::class.java)
             startActivity(intent)
@@ -97,12 +98,6 @@ class AdminDashboardActivity : AppCompatActivity() {
         // Update profile button
         binding.updateAdminProfileButton.setOnClickListener {
             val intent = Intent(this, UpdateAdminProfileActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Upload a new pizza type button
-        binding.uploadNewPizzaFAB.setOnClickListener {
-            val intent = Intent(this, AddNewPizzaActivity::class.java)
             startActivity(intent)
         }
     }

@@ -8,6 +8,7 @@
 
 package com.example.pizzaappwithfirebase
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -41,7 +42,8 @@ class AddNewPizzaActivity : AppCompatActivity() {
                     binding.pizzaCategoryAddEdit.text.clear()
 
                     Toast.makeText(this, "Pizza Added successfully", Toast.LENGTH_SHORT).show()
-                    finish()
+                    val intent = Intent(this, AllPizzasListActivity::class.java)
+                    startActivity(intent)
                 }.addOnFailureListener {
                     Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
                 }
